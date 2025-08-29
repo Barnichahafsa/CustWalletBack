@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .header {
+            background-color: #256D28;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            max-height: 60px;
+            margin-bottom: 10px;
+        }
+        .header h2 {
+            color: white;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .label {
+            font-weight: bold;
+            color: #256D28;
+            display: inline-block;
+            width: 140px;
+        }
+        .comment-box {
+            background: #f0f9f0;
+            border-left: 4px solid #256D28;
+            padding: 10px 15px;
+            margin: 12px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 12px 20px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="email-wrapper">
+
+    <div style="background-color: #256D28; color: white; text-align: center; padding: 10px; font-size: 18px; font-weight: bold;">
+         Nouveau Commentaire Client
+    </div>
+
+
+    <!-- CONTENT -->
+    <div class="content">
+        <p><span class="label">Nom:</span> <span th:text="${userName}"></span></p>
+        <p><span class="label">Téléphone:</span> <span th:text="${userPhone}"></span></p>
+        <p><span class="label">Catégorie:</span> <span th:text="${category}"></span></p>
+        <p><span class="label">Sujet:</span> <span th:text="${subject}"></span></p>
+
+        <p class="label">Commentaire:</p>
+        <div class="comment-box" th:text="${comment}"></div>
+
+        <p><span class="label">Email de contact :</span> <span th:text="${email}"></span></p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <!-- HEADER -->
+
+        Cet email a été généré automatiquement par le système E-Wallet.<br/>
+        &copy; <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> Diama Bank. Tous droits réservés.
+        <div style=" padding: 20px; text-align: center;">
+            <img src="https://www.diamabank.com/wp-content/uploads/2023/11/logo-diama-bank.png" alt="Diama Bank Logo" style="max-height: 60px;" />
+        </div>
+    </div>
+</div>
+</body>
+</html>
