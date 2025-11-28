@@ -6,15 +6,18 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
 import org.bits.diamabankwalletf.auth.security.JwtService;
 import org.bits.diamabankwalletf.dto.*;
+import org.bits.diamabankwalletf.exception.AccountCancelledException;
 import org.bits.diamabankwalletf.exception.AccountLockedException;
 import org.bits.diamabankwalletf.model.Wallet;
 import org.bits.diamabankwalletf.model.WalletDetails;
 import org.bits.diamabankwalletf.repository.DeviceRepository;
+import org.bits.diamabankwalletf.repository.NationalityRepository;
 import org.bits.diamabankwalletf.repository.WalletRepository;
 import org.bits.diamabankwalletf.service.*;
 import org.bits.diamabankwalletf.utils.IpAddressUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AccountStatusException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,6 +47,7 @@ public class AuthController {
     private final BankService bankService;
     private final WalletAuthService walletAuthService;
     private final PinExpiryService pinExpiryService;
+    private final NationalityRepository nationalityRepository;
 
     // Constants for better maintainability
     private static final String PERSONAL_CLIENT_TYPE = "P";
@@ -73,7 +77,7 @@ public class AuthController {
             return versionCheckResponse;
         }
 
-        // Find and validate wallet
+        // Find and validate wallet (authentication still from WALLET_DATA only)
         Optional<Wallet> walletOpt = walletRepository.findByPhoneNumber(phoneNumber);
         if (walletOpt.isEmpty()) {
             log.warn("Login failed: wallet not found for phoneNumber=[{}]", phoneNumber);
@@ -93,12 +97,29 @@ public class AuthController {
         }
 
         log.info("Wallet found for phoneNumber=[{}], bankCode=[{}]", phoneNumber, wallet.getBankCode());
+// Right before the blocking check:
+        log.info("=== ABOUT TO CHECK BLOCKING STATUS ===");
+        log.info("Phone number: {}", phoneNumber);
 
-        // Check if wallet is blocked
-        if (isWalletBlocked(wallet)) {
-            log.warn("Login failed: wallet blocked for phoneNumber=[{}]", phoneNumber);
+        boolean userBlocked = walletAuthService.isUserBlocked(phoneNumber);
+        log.info("Block check result: {}", userBlocked);
+
+        if (userBlocked) {
+            log.info("Throwing AccountLockedException for phoneNumber=[{}]", phoneNumber);
             throw new AccountLockedException(BLOCKED_ACCOUNT_CODE);
         }
+
+        log.info("Block check passed, continuing with login");
+
+        boolean userCancelled = walletAuthService.isUserCancelled(phoneNumber);
+        log.info("Cancelled check result: {}", userCancelled);
+
+        if (userCancelled) {
+            log.info("Throwing AccountCancelledException for phoneNumber=[{}]", phoneNumber);
+            throw new AccountCancelledException(BLOCKED_ACCOUNT_CODE);
+        }
+
+        log.info("Cancelled check passed, continuing with login");
 
         // Verify PIN
         if (!walletAuthService.verifyPin(wallet, pin)) {
@@ -115,8 +136,8 @@ public class AuthController {
 
         log.info("All PIN checks passed for phoneNumber=[{}], proceeding with normal login", phoneNumber);
 
-        // Reset failed attempts on successful login
-        walletAuthService.resetFailedAttempts(wallet);
+        // Record successful login in both tables
+        walletAuthService.recordSuccessfulLogin(wallet);
 
         // Handle device verification
         return handleDeviceVerification(authRequest, wallet, ipAddress);
@@ -127,27 +148,24 @@ public class AuthController {
         final String phoneNumber = request.getPhoneNumber();
         log.info("OTP verification attempt for phoneNumber=[{}]", phoneNumber);
 
-        if (!otpService.canCheckOtp(phoneNumber)) {
-            log.warn("Too many OTP verification attempts for phoneNumber=[{}]", phoneNumber);
-            return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS)
-                    .body(new AuthResponse(false, null, "Too many verification attempts, please try again later"));
-        }
-
+        // Single call - handles everything
         if (!otpService.verifyOtp(phoneNumber, request.getOtp())) {
-            log.warn("Invalid OTP for phoneNumber=[{}]", phoneNumber);
+            log.warn("OTP verification failed for phoneNumber=[{}]", phoneNumber);
             return ResponseEntity.status(HttpStatus.FORBIDDEN)
-                    .body(new AuthResponse(false, null, "Invalid OTP"));
+                    .body(new AuthResponse(false, null, "Invalid OTP or too many attempts"));
         }
 
-        // Generate device ID if not provided
-        String deviceId = Optional.ofNullable(request.getDeviceId())
-                .orElseGet(deviceService::generateDeviceId);
+        // Rest of your code for device registration and login...
+        String deviceId = request.getDeviceId();
+        if (deviceId == null || deviceId.isEmpty()) {
+            log.warn("Device ID missing from request for phoneNumber={}", phoneNumber);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new AuthResponse(false, null, "Device ID required"));
+        }
 
-        // Register the device
         boolean registered = deviceService.updateDeviceId(phoneNumber, deviceId);
         log.info("Device registration result for phoneNumber=[{}]: registered=[{}]", phoneNumber, registered);
 
-        // Continue with login flow
         log.info("OTP verification successful, continuing with login flow for phoneNumber=[{}]", phoneNumber);
         String ipAddress = ipAddressUtils.getClientIp(httpRequest);
         return processLogin(phoneNumber, deviceId, ipAddress);
@@ -173,7 +191,7 @@ public class AuthController {
                     .body(new AuthResponse(false, null, "PIN already set"));
         }
 
-        // Set PIN for first-time user
+        // Set PIN for first-time user (will update both tables)
         boolean success = walletAuthService.updatePin(wallet, request.getPin());
         if (!success) {
             log.error("Init PIN failed: error setting PIN for phoneNumber=[{}]", phoneNumber);
@@ -194,13 +212,11 @@ public class AuthController {
         return wallet.getClientType() != null && wallet.getClientType().toString().equals(PERSONAL_CLIENT_TYPE);
     }
 
-    private boolean isWalletBlocked(Wallet wallet) {
-        return wallet.getBlockAction() != null && wallet.getBlockAction() == BLOCKED_ACTION;
-    }
-
     private ResponseEntity<?> handleFailedPinVerification(Wallet wallet, String phoneNumber) {
         boolean shouldBlock = walletAuthService.handleFailedLogin(wallet);
-        log.warn("Login failed: invalid PIN for phoneNumber=[{}], blockRequired=[{}]", phoneNumber, shouldBlock);
+        log.info("Login failed: invalid PIN for phoneNumber=[{}], blockRequired=[{}]", phoneNumber, shouldBlock);
+
+
         return createUnauthorizedResponse("Invalid credentials", null);
     }
 
@@ -292,7 +308,7 @@ public class AuthController {
     }
 
     private ResponseEntity<?> processLogin(String phoneNumber, String deviceId, String ipAddress) {
-        // Find wallet by phone number
+        // Find wallet by phone number (authentication still from WALLET_DATA only)
         Optional<Wallet> walletOpt = walletRepository.findByPhoneNumber(phoneNumber);
         if (walletOpt.isEmpty()) {
             log.warn("processLogin: wallet not found for phoneNumber=[{}]", phoneNumber);
@@ -303,10 +319,16 @@ public class AuthController {
         log.info("processLogin: wallet found for phoneNumber=[{}], bankCode=[{}]",
                 phoneNumber, wallet.getBankCode());
 
-        // Check if wallet is blocked
-        if (isWalletBlocked(wallet)) {
-            log.warn("processLogin: wallet blocked for phoneNumber=[{}]", phoneNumber);
+        // Check if user is blocked - ONLY from CUSTOMER_DWS table
+        if (walletAuthService.isUserBlocked(phoneNumber)) {
+            log.warn("processLogin: user blocked (from customer table) for phoneNumber=[{}]", phoneNumber);
             throw new AccountLockedException(BLOCKED_ACCOUNT_CODE);
+        }
+
+        // Check if user is cancelled/deactivated (status = 'C')
+        if (walletAuthService.isUserCancelled(phoneNumber)) {
+            log.warn("processLogin: user cancelled for phoneNumber=[{}]", phoneNumber);
+            throw new AccountCancelledException(BLOCKED_ACCOUNT_CODE);
         }
 
         // Generate JWT token
@@ -360,6 +382,7 @@ public class AuthController {
                 .processingCodes(responseData.getProcessingCodes())
                 .ads(responseData.getAds())
                 .adsDelay(responseData.getAdsDelay())
+                .NationalitiesList(responseData.nationalitiesList)
                 .build());
     }
 
@@ -380,6 +403,9 @@ public class AuthController {
         // Secret questions
         List<JSONObject> walletQuestionsList = fetchSecretQuestions();
         builder.walletQuestionsList(walletQuestionsList);
+
+        List<?> nationalities = fetchNationalities();
+        builder.nationalitiesList(nationalities);
 
         // Various service lists
         builder.reasonList(walletService.getReasonList(bankCode, wallet.getClientCode()))
@@ -415,6 +441,10 @@ public class AuthController {
             log.error("Error fetching secret questions for wallet: {}", e.getMessage());
             return List.of();
         }
+    }
+
+    private List<?> fetchNationalities() {
+        return nationalityRepository.findAll();
     }
 
     private void logResponseDataSizes(String phoneNumber, WalletResponseData data) {
@@ -456,6 +486,7 @@ public class AuthController {
     private static class WalletResponseData {
         private String bankWording;
         private List<?> notificationList;
+        private List<?> nationalitiesList;
         private List<JSONObject> walletQuestionsList;
         private List<?> reasonList;
         private List<?> providerList;

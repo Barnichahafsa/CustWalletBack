@@ -108,4 +108,7 @@ public class Customer {
     @Column(name = "ESTIMATED_INCOME")
     private String estimatedIncome;
 
+    @Column(name = "QR_DATA", length = 4000)
+    private String qrData;
+
 }

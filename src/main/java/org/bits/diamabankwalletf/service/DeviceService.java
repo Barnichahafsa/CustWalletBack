@@ -64,32 +64,24 @@ public class DeviceService {
 
     public boolean updateDeviceId(String phoneNumber, String deviceId) {
         try {
-            log.info("updateDeviceId() - >> phoneNumber=[{}]", phoneNumber);
+            log.info("updateDeviceId() - >> phoneNumber=[{}], deviceId=[{}]", phoneNumber, deviceId);
 
-            // Find all existing devices for this phone number
+            // Delete all old records for this phone number
             List<Device> devices = deviceRepository.findAllByPhoneNumber(phoneNumber);
-
             if (!devices.isEmpty()) {
-                // Update the first device found
-                Device device = devices.get(0);
-                device.setDeviceId(deviceId);
-                deviceRepository.save(device);
-
-                // Delete any other devices for this phone number
-                if (devices.size() > 1) {
-                    log.info("Found {} devices for phone number, cleaning up extras", devices.size());
-                    for (int i = 1; i < devices.size(); i++) {
-                        deviceRepository.delete(devices.get(i));
-                    }
-                }
-
-                return true;
-            } else {
-                return insertDeviceId(phoneNumber, deviceId);
+                deviceRepository.deleteAll(devices);
             }
+
+            // Insert new one with client-sent deviceId
+            Device device = new Device(deviceId, phoneNumber);
+            deviceRepository.save(device);
+
+            return true;
         } catch (Exception e) {
             log.error("Error updating device ID", e);
             return false;
         }
     }
+
+
 }

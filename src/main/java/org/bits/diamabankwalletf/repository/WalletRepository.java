@@ -67,4 +67,7 @@ public interface WalletRepository extends JpaRepository<Wallet, WalletDataPK> {
      */
     @Query("SELECT COUNT(w) FROM Wallet w WHERE w.pinExpiryDate = CURRENT_DATE AND w.statusWallet = 'A'")
     Long countWalletsWithPinExpiringToday();
+
+    // Dans WalletRepository.java
+    Optional<Wallet> findByClientCodeAndBankCode(String clientCode, String bankCode);
 }

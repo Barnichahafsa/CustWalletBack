@@ -28,7 +28,10 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/otp/**").permitAll()
                         .requestMatchers("/api/wallet/list-secretQ").permitAll()
+                        .requestMatchers("/api/nationalities").permitAll()
                         .requestMatchers("/api/customer/register").permitAll()
+                        .requestMatchers("/api/wallet/initiateBill").permitAll()
+                        .requestMatchers("/api/dsd/payments/status").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

@@ -22,6 +22,21 @@ public class GlobalExceptionHandler {
     public ResponseEntity<AuthResponse> handleAccountLockedException(AccountLockedException ex) {
         log.error("Account locked: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.FORBIDDEN)
-                .body(new AuthResponse(false, null, "Account is locked"));
+                .body(AuthResponse.builder()
+                        .success(false)
+                        .message("ACCOUNT_LOCKED")
+                        .respCode("805")
+                        .build());
+    }
+
+    @ExceptionHandler(AccountCancelledException.class)
+    public ResponseEntity<AuthResponse> handleAccountCancelledException(AccountCancelledException ex) {
+        log.error("Account cancelled: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(AuthResponse.builder()
+                        .success(false)
+                        .message("ACCOUNT_CANCELLED")
+                        .respCode("805")
+                        .build());
     }
 }

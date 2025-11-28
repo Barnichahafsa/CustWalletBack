@@ -137,7 +137,7 @@ public class WalletCreationService {
         }
     }
 
-    public CustomerRegistrationResponse createWallet(WalletCreationRequest request) {
+    public ResponseService createWallet(WalletCreationRequest request) {
         try {
             String url = walletBackendUrl + createWalletEndpoint;
             log.info("Calling wallet creation endpoint at: {}", url);
@@ -154,9 +154,9 @@ public class WalletCreationService {
             requestMap.put("birthDate", request.getBirthDate());
             requestMap.put("nationality", request.getNationality());
             requestMap.put("documentCode", request.getDocumentCode());
-            requestMap.put("documentId", request.getDocumentId());
+            requestMap.put("documentId","  ");
             requestMap.put("gender", request.getGender());
-            requestMap.put("phone", request.getPhone());
+
             requestMap.put("currencyCode", request.getCurrencyCode());
             requestMap.put("bank", request.getBank());
             requestMap.put("branchCode", request.getBranchCode());
@@ -170,9 +170,9 @@ public class WalletCreationService {
             requestMap.put("entityId", request.getEntityId());
             requestMap.put("nkinName", request.getNkinName());
             requestMap.put("nkinPhone", request.getNkinPhone());
-            requestMap.put("srcFunds", request.getSrcFunds());
-            requestMap.put("occupation", request.getOccupation());
-            requestMap.put("estimatedIncome", request.getEstimatedIncome());
+            requestMap.put("srcFunds", "  ");
+            requestMap.put("occupation", "  ");
+            requestMap.put("estimatedIncome", "  ");
 
             log.debug("Request body: {}", requestMap);
 
@@ -182,10 +182,10 @@ public class WalletCreationService {
                     .bodyValue(requestMap)
                     .header("Authorization", token)
                     .retrieve()
-                    .bodyToMono(CustomerRegistrationResponse.class)
+                    .bodyToMono(ResponseService.class)
                     .doOnError(error -> log.error("Error calling wallet backend", error))
                     .onErrorResume(error -> {
-                        CustomerRegistrationResponse errorResponse = new CustomerRegistrationResponse();
+                        ResponseService errorResponse = new ResponseService();
                         errorResponse.setRespCode("999");
                         errorResponse.setMessage("Error calling wallet backend: " + error.getMessage());
                         return Mono.just(errorResponse);
@@ -202,7 +202,7 @@ public class WalletCreationService {
                     .block();
         } catch (Exception e) {
             log.error("Error calling wallet backend", e);
-            CustomerRegistrationResponse errorResponse = new CustomerRegistrationResponse();
+            ResponseService errorResponse = new ResponseService();
             errorResponse.setRespCode("999");
             errorResponse.setMessage("Error calling wallet backend: " + e.getMessage());
             return errorResponse;

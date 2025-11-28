@@ -1,10 +1,163 @@
-2025-08-28T02:03:34.417+01:00  WARN 37336 --- [DiamaBankWalletF] [eps housekeeper] com.zaxxer.hikari.pool.HikariPool        : eps - Thread starvation or clock leap detected (housekeeper delta=27m26s352ms588µs400ns).
-2025-08-28T10:00:57.790+01:00  INFO 37336 --- [DiamaBankWalletF] [eps connection adder] oracle.jdbc                              : entering args (oracle.jdbc.internal.AbstractConnectionBuilder$1@3168ca15)
-2025-08-28T10:00:57.794+01:00  INFO 37336 --- [DiamaBankWalletF] [eps connection adder] oracle.jdbc                              : traceId=3753A3BA. 
-2025-08-28T10:00:57.796+01:00  INFO 37336 --- [DiamaBankWalletF] [eps connection adder] oracle.jdbc                              : throwing
+2025-09-25T10:28:50.442+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.b.d.DiamaBankWalletFApplication        : Starting DiamaBankWalletFApplication using Java 17.0.12 with PID 18592 (C:\Users\barni\Desktop\Project 1 -R\DiamaBankWalletF\target\classes started by barni in C:\Users\barni\Desktop\Project 1 -R\DiamaBankWalletF)
+2025-09-25T10:28:50.452+01:00 DEBUG 18592 --- [DiamaBankWalletF] [main] o.b.d.DiamaBankWalletFApplication        : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-09-25T10:28:50.453+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.b.d.DiamaBankWalletFApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-25T10:28:55.001+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-25T10:28:55.001+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-09-25T10:28:55.040+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.AdvertisementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.040+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.BankRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.040+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.BranchDataRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.040+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.BranchRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.040+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.CustomerActivityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.048+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.DeviceRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.EpsProfileRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.ForgotPinAttemptRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.JwtTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.MobileMoneyOperatorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.NationalityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.NotificationRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.050+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.ProcessingCodeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.058+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.SavingAccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.058+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.SmsLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.060+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.TransferWalletRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.060+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.UserActivityTrackingRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.065+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.WalletRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:28:55.065+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 0 JDBC repository interfaces.
+2025-09-25T10:28:55.075+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-25T10:28:55.080+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-25T10:28:55.199+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 19 JPA repository interfaces.
+2025-09-25T10:28:55.684+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-25T10:28:55.694+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-25T10:28:55.694+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-09-25T10:28:55.749+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-25T10:28:55.749+01:00  INFO 18592 --- [DiamaBankWalletF] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5230 ms
+2025-09-25T10:28:55.871+01:00  INFO 18592 --- [DiamaBankWalletF] [main] com.zaxxer.hikari.HikariDataSource       : eps - Starting...
+2025-09-25T10:28:59.416+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-25T10:28:59.469+01:00  INFO 18592 --- [DiamaBankWalletF] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-09-25T10:28:59.495+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-25T10:28:59.726+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-25T10:28:59.751+01:00  INFO 18592 --- [DiamaBankWalletF] [main] com.zaxxer.hikari.HikariDataSource       : eps - Starting...
+2025-09-25T10:29:03.092+01:00  WARN 18592 --- [DiamaBankWalletF] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 12541, SQLState: 66000
+2025-09-25T10:29:03.093+01:00 ERROR 18592 --- [DiamaBankWalletF] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=JxqxeGMmSfWmZ0a/m4zOHw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+2025-09-25T10:29:03.095+01:00  WARN 18592 --- [DiamaBankWalletF] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
-java.sql.SQLRecoverableException: ORA-17820: The network adapter could not establish the connection. (CONNECTION_ID=E3pUxEfcTFamqRt8ZUO1cg==)
-https://docs.oracle.com/error-help/db/ora-17820/
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=JxqxeGMmSfWmZ0a/m4zOHw==)
+https://docs.oracle.com/error-help/db/ora-12541/] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1717) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1466) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1387) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1224) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.bits.diamabankwalletf.DiamaBankWalletFApplication.main(DiamaBankWalletFApplication.java:16) ~[classes/:na]
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=JxqxeGMmSfWmZ0a/m4zOHw==)
+https://docs.oracle.com/error-help/db/ora-12541/
 	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
@@ -15,32 +168,28 @@ https://docs.oracle.com/error-help/db/ora-17820/
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:724) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:703) ~[HikariCP-5.1.0.jar:na]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-Caused by: oracle.net.ns.NetException: ORA-17820: The network adapter could not establish the connection. (CONNECTION_ID=E3pUxEfcTFamqRt8ZUO1cg==)
-https://docs.oracle.com/error-help/db/ora-17820/
-	at oracle.net.nt.ConnStrategy.createExecuteException(ConnStrategy.java:842) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:820) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	... 15 common frames omitted
-Caused by: java.io.IOException: 
-	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:437) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	... 108 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=JxqxeGMmSfWmZ0a/m4zOHw==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.ConnOption.connect(ConnOption.java:332) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	... 20 common frames omitted
-Caused by: java.net.SocketException: Software caused connection abort: getsockopt
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 122 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
 	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
 	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1148) ~[na:na]
@@ -51,20 +200,583 @@ Caused by: java.net.SocketException: Software caused connection abort: getsockop
 	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
 	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
-	... 24 common frames omitted
+	... 131 common frames omitted
 
-2025-08-28T10:01:00.290+01:00  WARN 37336 --- [DiamaBankWalletF] [eps housekeeper] com.zaxxer.hikari.pool.HikariPool        : eps - Thread starvation or clock leap detected (housekeeper delta=14h37m35s736ms887µs600ns).
-2025-08-28T10:00:58.346+01:00  INFO 37336 --- [DiamaBankWalletF] [eps connection adder] oracle.jdbc                              : properties={LOCALE=en_US, DriverVersion=23.5.0.24.07, java.library.path: =C:\Users\barni\.jdks\corretto-17.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\barni\Downloads\WINDOWS.X64_193000_db_home\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\PostgreSQL\16\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Users\barni\AppData\Roaming\npm\node_modules;C:\Users\barni\AppData\Local\Microsoft\WindowsApps;C:\Program Files\PostgreSQL\16\bin;C:\Users\barni\AppData\Roaming\npm;C:\Program Files\Java\jdk-17\bin;C:\Users\barni\AppData\Local\Programs\Microsoft VS Code\bin;;., java.class.path: =C:\Users\barni\Desktop\Project 1 -R\DiamaBankWalletF\target\classes;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-data-jdbc\3.4.5\spring-boot-starter-data-jdbc-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\data\spring-data-jdbc\3.4.5\spring-data-jdbc-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\data\spring-data-relational\3.4.5\spring-data-relational-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\data\spring-data-commons\3.4.5\spring-data-commons-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\spring-context\6.2.6\spring-context-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\spring-beans\6.2.6\spring-beans-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.4.5\spring-boot-starter-data-jpa-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter\3.4.5\spring-boot-starter-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot\3.4.5\spring-boot-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.5\spring-boot-autoconfigure-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.4.5\spring-boot-starter-logging-3.4.5.jar;C:\Users\barni\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\barni\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\barni\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\barni\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\barni\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\barni\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar;C:\Users\barni\.m2\repository\org\hibernate\orm\hibernate-core\6.6.13.Final\hibernate-core-6.6.13.Final.jar;C:\Users\barni\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\barni\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\barni\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\barni\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\barni\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\barni\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\barni\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar;C:\Users\barni\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\barni\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\barni\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\barni\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\barni\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\barni\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\barni\.m2\repository\org\springframework\data\spring-data-jpa\3.4.5\spring-data-jpa-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\spring-orm\6.2.6\spring-orm-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\spring-aspects\6.2.6\spring-aspects-6.2.6.jar;C:\Users\barni\.m2\repository\org\aspectj\aspectjweaver\1.9.24\aspectjweaver-1.9.24.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.4.5\spring-boot-starter-jdbc-3.4.5.jar;C:\Users\barni\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\barni\.m2\repository\org\springframework\spring-jdbc\6.2.6\spring-jdbc-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.4.5\spring-boot-starter-security-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\spring-aop\6.2.6\spring-aop-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\security\spring-security-config\6.4.5\spring-security-config-6.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\security\spring-security-web\6.4.5\spring-security-web-6.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\spring-expression\6.2.6\spring-expression-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.4.5\spring-boot-starter-thymeleaf-3.4.5.jar;C:\Users\barni\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.3.RELEASE\thymeleaf-spring6-3.1.3.RELEASE.jar;C:\Users\barni\.m2\repository\org\thymeleaf\thymeleaf\3.1.3.RELEASE\thymeleaf-3.1.3.RELEASE.jar;C:\Users\barni\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\barni\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.4.5\spring-boot-starter-web-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.4.5\spring-boot-starter-json-3.4.5.jar;C:\Users\barni\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.18.3\jackson-datatype-jdk8-2.18.3.jar;C:\Users\barni\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.18.3\jackson-datatype-jsr310-2.18.3.jar;C:\Users\barni\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.18.3\jackson-module-parameter-names-2.18.3.jar;C:\Users\barni\.m2\repository\org\springframework\spring-web\6.2.6\spring-web-6.2.6.jar;C:\Users\barni\.m2\repository\io\micrometer\micrometer-observation\1.14.6\micrometer-observation-1.14.6.jar;C:\Users\barni\.m2\repository\io\micrometer\micrometer-commons\1.14.6\micrometer-commons-1.14.6.jar;C:\Users\barni\.m2\repository\org\springframework\spring-webmvc\6.2.6\spring-webmvc-6.2.6.jar;C:\Users\barni\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity6\3.1.3.RELEASE\thymeleaf-extras-springsecurity6-3.1.3.RELEASE.jar;C:\Users\barni\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\barni\.m2\repository\com\oracle\database\jdbc\ojdbc11\23.5.0.24.07\ojdbc11-23.5.0.24.07.jar;C:\Users\barni\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.4.5\spring-boot-starter-tomcat-3.4.5.jar;C:\Users\barni\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\barni\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.40\tomcat-embed-core-10.1.40.jar;C:\Users\barni\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.40\tomcat-embed-el-10.1.40.jar;C:\Users\barni\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.40\tomcat-embed-websocket-10.1.40.jar;C:\Users\barni\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\barni\.m2\repository\org\springframework\spring-core\6.2.6\spring-core-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\spring-jcl\6.2.6\spring-jcl-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\security\spring-security-core\6.4.5\spring-security-core-6.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\security\spring-security-crypto\6.4.5\spring-security-crypto-6.4.5.jar;C:\Users\barni\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\barni\.m2\repository\commons-beanutils\commons-beanutils\1.8.0\commons-beanutils-1.8.0.jar;C:\Users\barni\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\barni\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Users\barni\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\barni\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\barni\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\barni\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\barni\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\barni\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\barni\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\barni\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-webflux\3.4.5\spring-boot-starter-webflux-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\boot\spring-boot-starter-reactor-netty\3.4.5\spring-boot-starter-reactor-netty-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\spring-webflux\6.2.6\spring-webflux-6.2.6.jar;C:\Users\barni\.m2\repository\io\projectreactor\reactor-core\3.7.5\reactor-core-3.7.5.jar;C:\Users\barni\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\barni\.m2\repository\io\projectreactor\netty\reactor-netty\1.2.5\reactor-netty-1.2.5.jar;C:\Users\barni\.m2\repository\io\projectreactor\netty\reactor-netty-core\1.2.5\reactor-netty-core-1.2.5.jar;C:\Users\barni\.m2\repository\io\netty\netty-handler\4.1.119.Final\netty-handler-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-common\4.1.119.Final\netty-common-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-resolver\4.1.119.Final\netty-resolver-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-buffer\4.1.119.Final\netty-buffer-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-transport\4.1.119.Final\netty-transport-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.119.Final\netty-transport-native-unix-common-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-codec\4.1.119.Final\netty-codec-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-handler-proxy\4.1.119.Final\netty-handler-proxy-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-codec-socks\4.1.119.Final\netty-codec-socks-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-resolver-dns\4.1.119.Final\netty-resolver-dns-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-codec-dns\4.1.119.Final\netty-codec-dns-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.119.Final\netty-resolver-dns-native-macos-4.1.119.Final-osx-x86_64.jar;C:\Users\barni\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.119.Final\netty-resolver-dns-classes-macos-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-transport-native-epoll\4.1.119.Final\netty-transport-native-epoll-4.1.119.Final-linux-x86_64.jar;C:\Users\barni\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.119.Final\netty-transport-classes-epoll-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\projectreactor\netty\reactor-netty-http\1.2.5\reactor-netty-http-1.2.5.jar;C:\Users\barni\.m2\repository\io\netty\netty-codec-http\4.1.119.Final\netty-codec-http-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\netty\netty-codec-http2\4.1.119.Final\netty-codec-http2-4.1.119.Final.jar;C:\Users\barni\.m2\repository\io\projectreactor\netty\incubator\reactor-netty-incubator-quic\0.2.5\reactor-netty-incubator-quic-0.2.5.jar;C:\Users\barni\.m2\repository\io\netty\incubator\netty-incubator-codec-native-quic\0.0.71.Final\netty-incubator-codec-native-quic-0.0.71.Final-linux-x86_64.jar;C:\Users\barni\.m2\repository\io\netty\incubator\netty-incubator-codec-classes-quic\0.0.71.Final\netty-incubator-codec-classes-quic-0.0.71.Final.jar;C:\Users\barni\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\barni\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.3\jackson-databind-2.18.3.jar;C:\Users\barni\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.3\jackson-annotations-2.18.3.jar;C:\Users\barni\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.3\jackson-core-2.18.3.jar;C:\Users\barni\.m2\repository\org\springframework\data\spring-data-redis\4.0.0-M2\spring-data-redis-4.0.0-M2.jar;C:\Users\barni\.m2\repository\org\springframework\data\spring-data-keyvalue\3.4.5\spring-data-keyvalue-3.4.5.jar;C:\Users\barni\.m2\repository\org\springframework\spring-tx\6.2.6\spring-tx-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\spring-oxm\6.2.6\spring-oxm-6.2.6.jar;C:\Users\barni\.m2\repository\org\springframework\spring-context-support\6.2.6\spring-context-support-6.2.6.jar;C:\Users\barni\.m2\repository\com\h2database\h2\2.3.232\h2-2.3.232.jar;C:\Users\barni\.m2\repository\jakarta\mail\jakarta.mail-api\2.1.3\jakarta.mail-api-2.1.3.jar;C:\Users\barni\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\barni\.m2\repository\org\eclipse\angus\angus-mail\2.0.3\angus-mail-2.0.3.jar;C:\Users\barni\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2024.2\lib\idea_rt.jar, java.version: =17.0.12}. 
-2025-08-28T10:16:40.118+01:00  INFO 37336 --- [DiamaBankWalletF] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-08-28T10:16:40.213+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.jobs.PinExpiryScheduler            : Checking for expired PINs
-2025-08-28T10:16:40.828+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.service.PinExpiryService           : Found 0 wallets with expired PINs
-2025-08-28T10:16:41.044+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.jobs.PinExpiryScheduler            : Starting daily PIN expiry notification job
-2025-08-28T10:16:41.058+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.service.PinExpiryService           : Found 0 wallets with expired PINs
-2025-08-28T10:16:41.216+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.service.PinExpiryService           : Sending 7-day expiry notifications to 0 wallets
-2025-08-28T10:16:41.242+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.service.PinExpiryService           : Sending 3-day expiry notifications to 0 wallets
-2025-08-28T10:16:41.258+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.service.PinExpiryService           : Sending 1-day expiry notifications to 0 wallets
-2025-08-28T10:16:41.276+01:00  INFO 37336 --- [DiamaBankWalletF] [scheduling-1] o.b.d.jobs.PinExpiryScheduler            : PIN expiry job completed - Expired: 0, Expiring today: 0
-2025-08-28T10:16:41.284+01:00  INFO 37336 --- [DiamaBankWalletF] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-08-28T10:16:43.594+01:00  INFO 37336 --- [DiamaBankWalletF] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-08-28T10:16:43.674+01:00  INFO 37336 --- [DiamaBankWalletF] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : eps - Shutdown initiated...
-2025-08-28T10:16:43.768+01:00  INFO 37336 --- [DiamaBankWalletF] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : eps - Shutdown completed.
+2025-09-25T10:29:03.136+01:00  WARN 18592 --- [DiamaBankWalletF] [main] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-25T10:29:03.147+01:00  INFO 18592 --- [DiamaBankWalletF] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 19.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-25T10:29:04.192+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-25T10:29:04.194+01:00  INFO 18592 --- [DiamaBankWalletF] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-25T10:29:04.397+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-25T10:29:04.881+01:00 DEBUG 18592 --- [DiamaBankWalletF] [main] o.b.d.auth.filter.JwtAuthFilter          : Filter 'jwtAuthFilter' configured for use
+2025-09-25T10:29:04.882+01:00 DEBUG 18592 --- [DiamaBankWalletF] [main] o.b.d.filter.SensitiveDataFilter         : Filter 'sensitiveDataFilter' configured for use
+2025-09-25T10:29:05.502+01:00  WARN 18592 --- [DiamaBankWalletF] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-25T10:29:05.542+01:00  INFO 18592 --- [DiamaBankWalletF] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-25T10:29:05.936+01:00  INFO 18592 --- [DiamaBankWalletF] [main] com.zaxxer.hikari.HikariDataSource       : eps - Starting...
+2025-09-25T10:29:09.036+01:00  WARN 18592 --- [DiamaBankWalletF] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+2025-09-25T10:29:09.045+01:00  INFO 18592 --- [DiamaBankWalletF] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-25T10:29:09.054+01:00  INFO 18592 --- [DiamaBankWalletF] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-25T10:29:09.057+01:00  WARN 18592 --- [DiamaBankWalletF] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [oracle.jdbc.diagnostics.Diagnostic.CLOCK] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/java.lang.Object.wait(Native Method)
+ java.base@17.0.12/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.12/java.util.TimerThread.run(Timer.java:516)
+2025-09-25T10:29:09.057+01:00  WARN 18592 --- [DiamaBankWalletF] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.12/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1674)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:324)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:306)
+ app//oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:346)
+2025-09-25T10:29:09.057+01:00  WARN 18592 --- [DiamaBankWalletF] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [InterruptTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/java.lang.Object.wait(Native Method)
+ java.base@17.0.12/java.lang.Object.wait(Object.java:338)
+ java.base@17.0.12/java.util.TimerThread.mainLoop(Timer.java:537)
+ java.base@17.0.12/java.util.TimerThread.run(Timer.java:516)
+2025-09-25T10:29:09.063+01:00  INFO 18592 --- [DiamaBankWalletF] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-25T10:29:09.074+01:00 ERROR 18592 --- [DiamaBankWalletF] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.bits.diamabankwalletf.DiamaBankWalletFApplication.main(DiamaBankWalletFApplication.java:16) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1739) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1597) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1555) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:563) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:392) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:385) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1290) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcCustomConversions(AbstractJdbcConfiguration.java:154) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcCustomConversions(JdbcRepositoriesAutoConfiguration.java:127) ~[spring-boot-autoconfigure-3.4.5.jar:3.4.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 60 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:108) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:78) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[na:na]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:80) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:227) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcDialect(JdbcRepositoriesAutoConfiguration.java:151) ~[spring-boot-autoconfigure-3.4.5.jar:3.4.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 63 common frames omitted
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=ibJkQjn+RE+Rv8yRfUb92g==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	... 83 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=ibJkQjn+RE+Rv8yRfUb92g==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 97 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1148) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1183) ~[na:na]
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:98) ~[na:na]
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 106 common frames omitted
+
+2025-09-25T10:29:35.944+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.b.d.DiamaBankWalletFApplication        : Starting DiamaBankWalletFApplication using Java 17.0.12 with PID 11876 (C:\Users\barni\Desktop\Project 1 -R\DiamaBankWalletF\target\classes started by barni in C:\Users\barni\Desktop\Project 1 -R\DiamaBankWalletF)
+2025-09-25T10:29:35.947+01:00 DEBUG 11876 --- [DiamaBankWalletF] [main] o.b.d.DiamaBankWalletFApplication        : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-09-25T10:29:35.947+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.b.d.DiamaBankWalletFApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-25T10:29:36.937+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-25T10:29:36.937+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-09-25T10:29:36.973+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.AdvertisementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.973+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.BankRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.973+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.BranchDataRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.977+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.BranchRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.977+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.CustomerActivityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.979+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.979+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.DeviceRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.979+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.EpsProfileRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.981+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.ForgotPinAttemptRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.981+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.JwtTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.981+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.MobileMoneyOperatorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.981+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.NationalityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.985+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.NotificationRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.985+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.ProcessingCodeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.987+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.SavingAccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.987+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.SmsLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.989+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.TransferWalletRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.989+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.UserActivityTrackingRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.989+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface org.bits.diamabankwalletf.repository.WalletRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-09-25T10:29:36.989+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 0 JDBC repository interfaces.
+2025-09-25T10:29:36.997+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-25T10:29:36.997+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-25T10:29:37.090+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 19 JPA repository interfaces.
+2025-09-25T10:29:37.522+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-25T10:29:37.532+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-25T10:29:37.532+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-09-25T10:29:37.567+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-25T10:29:37.567+01:00  INFO 11876 --- [DiamaBankWalletF] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2025-09-25T10:29:37.687+01:00  INFO 11876 --- [DiamaBankWalletF] [main] com.zaxxer.hikari.HikariDataSource       : eps - Starting...
+2025-09-25T10:29:40.947+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-25T10:29:40.995+01:00  INFO 11876 --- [DiamaBankWalletF] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-09-25T10:29:41.020+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-25T10:29:41.277+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-25T10:29:41.306+01:00  INFO 11876 --- [DiamaBankWalletF] [main] com.zaxxer.hikari.HikariDataSource       : eps - Starting...
+2025-09-25T10:29:44.343+01:00  WARN 11876 --- [DiamaBankWalletF] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 12541, SQLState: 66000
+2025-09-25T10:29:44.343+01:00 ERROR 11876 --- [DiamaBankWalletF] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=riW0qFtvQwaR60djsv8iuA==)
+https://docs.oracle.com/error-help/db/ora-12541/
+2025-09-25T10:29:44.344+01:00  WARN 11876 --- [DiamaBankWalletF] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=riW0qFtvQwaR60djsv8iuA==)
+https://docs.oracle.com/error-help/db/ora-12541/] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1717) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1466) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1387) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1224) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.bits.diamabankwalletf.DiamaBankWalletFApplication.main(DiamaBankWalletFApplication.java:16) ~[classes/:na]
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=riW0qFtvQwaR60djsv8iuA==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	... 108 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=riW0qFtvQwaR60djsv8iuA==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 122 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1148) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1183) ~[na:na]
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:98) ~[na:na]
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 131 common frames omitted
+
+2025-09-25T10:29:44.361+01:00  WARN 11876 --- [DiamaBankWalletF] [main] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-25T10:29:44.371+01:00  INFO 11876 --- [DiamaBankWalletF] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 19.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-25T10:29:45.424+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-25T10:29:45.427+01:00  INFO 11876 --- [DiamaBankWalletF] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-25T10:29:45.675+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-25T10:29:46.131+01:00 DEBUG 11876 --- [DiamaBankWalletF] [main] o.b.d.auth.filter.JwtAuthFilter          : Filter 'jwtAuthFilter' configured for use
+2025-09-25T10:29:46.131+01:00 DEBUG 11876 --- [DiamaBankWalletF] [main] o.b.d.filter.SensitiveDataFilter         : Filter 'sensitiveDataFilter' configured for use
+2025-09-25T10:29:46.816+01:00  WARN 11876 --- [DiamaBankWalletF] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-25T10:29:46.836+01:00  INFO 11876 --- [DiamaBankWalletF] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-25T10:29:47.256+01:00  INFO 11876 --- [DiamaBankWalletF] [main] com.zaxxer.hikari.HikariDataSource       : eps - Starting...
+2025-09-25T10:29:50.324+01:00  WARN 11876 --- [DiamaBankWalletF] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+2025-09-25T10:29:50.329+01:00  INFO 11876 --- [DiamaBankWalletF] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-25T10:29:50.334+01:00  INFO 11876 --- [DiamaBankWalletF] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-25T10:29:50.336+01:00  WARN 11876 --- [DiamaBankWalletF] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [oracle.jdbc.diagnostics.Diagnostic.CLOCK] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/java.lang.Object.wait(Native Method)
+ java.base@17.0.12/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.12/java.util.TimerThread.run(Timer.java:516)
+2025-09-25T10:29:50.336+01:00  WARN 11876 --- [DiamaBankWalletF] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.12/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1674)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:324)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:306)
+ app//oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:346)
+2025-09-25T10:29:50.337+01:00  WARN 11876 --- [DiamaBankWalletF] [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [InterruptTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/java.lang.Object.wait(Native Method)
+ java.base@17.0.12/java.lang.Object.wait(Object.java:338)
+ java.base@17.0.12/java.util.TimerThread.mainLoop(Timer.java:537)
+ java.base@17.0.12/java.util.TimerThread.run(Timer.java:516)
+2025-09-25T10:29:50.343+01:00  INFO 11876 --- [DiamaBankWalletF] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-25T10:29:50.356+01:00 ERROR 11876 --- [DiamaBankWalletF] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.bits.diamabankwalletf.DiamaBankWalletFApplication.main(DiamaBankWalletFApplication.java:16) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1739) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1597) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1555) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:563) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:392) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:385) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1290) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcCustomConversions(AbstractJdbcConfiguration.java:154) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcCustomConversions(JdbcRepositoriesAutoConfiguration.java:127) ~[spring-boot-autoconfigure-3.4.5.jar:3.4.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 60 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:108) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:78) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[na:na]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:80) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:227) ~[spring-data-jdbc-3.4.5.jar:3.4.5]
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcDialect(JdbcRepositoriesAutoConfiguration.java:151) ~[spring-boot-autoconfigure-3.4.5.jar:3.4.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 63 common frames omitted
+Caused by: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=1Fn1oNUXS4qzh5b2Dj935Q==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1617) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1139) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1206) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:105) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:886) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:693) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-6.2.6.jar:6.2.6]
+	... 83 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12541: Cannot connect. No listener at host 192.168.1.204 port 1521. (CONNECTION_ID=1Fn1oNUXS4qzh5b2Dj935Q==)
+https://docs.oracle.com/error-help/db/ora-12541/
+	at oracle.net.nt.TcpNTAdapter.handleEstablishSocketException(TcpNTAdapter.java:414) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:346) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:224) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:332) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1222) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:761) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:711) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:959) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:328) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3419) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1018) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 97 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1148) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1183) ~[na:na]
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:98) ~[na:na]
+	at oracle.net.nt.TimeoutSocketChannel.doConnect(TimeoutSocketChannel.java:288) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.initializeSocketChannel(TimeoutSocketChannel.java:268) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:235) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:202) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:335) ~[ojdbc11-23.5.0.24.07.jar:23.5.0.24.07]
+	... 106 common frames omitted
+

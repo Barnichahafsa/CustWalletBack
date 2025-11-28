@@ -18,6 +18,9 @@ import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.KeySpec;
@@ -127,10 +130,20 @@ public class PinEncryptionUtil {
         return tripleDES.soften(encryptedValue);
     }
 
-    /**
-     * Load key from resources
-     */
     private byte[] loadKeyFromResources() throws IOException {
+        // Load key from WildFly standalone/configuration folder
+        Path keyPath = Paths.get(System.getProperty("jboss.server.config.dir"), "key.3des.dat");
+
+        if (!Files.exists(keyPath)) {
+            log.error("Key file not found in standalone/configuration: key.3des.dat");
+            throw new IOException("Key file not found in standalone/configuration: key.3des.dat");
+        }
+
+        log.info("Successfully loaded key file from standalone/configuration");
+        return Files.readAllBytes(keyPath);
+    }
+
+ /*  private byte[] loadKeyFromResources() throws IOException {
         try (InputStream is = getClass().getResourceAsStream("/key.3des.dat")) {
             if (is == null) {
                 log.error("Key file not found in resources: key.3des.dat");
@@ -142,6 +155,7 @@ public class PinEncryptionUtil {
         }
     }
 
+*/
     /**
      * Inner class to hold bank encryption keys
      */

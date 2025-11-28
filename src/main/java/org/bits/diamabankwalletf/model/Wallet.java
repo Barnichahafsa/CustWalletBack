@@ -329,4 +329,7 @@ public class Wallet {
     @Column(name = "PIN_EXPIRY_NOTIFICATION_SENT", length = 1, columnDefinition = "CHAR(1) DEFAULT 'N'")
     private Character pinExpiryNotificationSent = 'N';
 
+
+    
+
 }

@@ -41,6 +41,7 @@ public class  AuthResponse {
     // Lists and collections
     private List<?> notificationList;
     private List<JSONObject> QuestionsList;
+    private List<?> NationalitiesList;
     private List<?> providerList;
     private List<?> airtimeProviderList;
     private List<?> reasonList;

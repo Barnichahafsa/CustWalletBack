@@ -24,6 +24,8 @@ public class EmailService {
         this.mailSender = mailSender;
         this.templateEngine = templateEngine;
     }
+    @Value("${spring.mail.username}")
+    private String senderEmail;
 
     public void sendCustomerComment(CommentRequest request) throws MessagingException {
         Context context = new Context();
@@ -38,9 +40,10 @@ public class EmailService {
 
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "UTF-8");
+        helper.setFrom(senderEmail); // ✅ force From = SMTP login
         helper.setTo(feedbackEmail);
         helper.setSubject("Nouveau commentaire: " + request.getSubject());
-        helper.setText(htmlContent, true); // HTML email
+        helper.setText(htmlContent, true);
 
         mailSender.send(mimeMessage);
     }
@@ -62,11 +65,13 @@ public class EmailService {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+        helper.setFrom(senderEmail); // ✅
         helper.setTo(feedbackEmail);
         helper.setSubject("📌 Nouvelle Plainte Client");
         helper.setText(htmlContent, true);
 
         mailSender.send(message);
     }
+
 
 }

@@ -35,4 +35,7 @@ public interface JwtTokenRepository extends JpaRepository<JwtToken, Long > {
             "AND j.status = 'ACTIVE'")
     long countActiveTokensByMerchant(@Param("merchantWallet") String merchantWallet);
 
+    Optional<JwtToken> findByTokenIdStartingWith(String shortTokenId);
+
+
 }

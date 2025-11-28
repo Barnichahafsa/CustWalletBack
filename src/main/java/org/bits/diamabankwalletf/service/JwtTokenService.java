@@ -237,12 +237,25 @@ public class JwtTokenService {
     }
 
     /**
-     * Validate token from database
+     * Validate token from database - UPDATED to handle shortened token IDs
      */
     private JwtValidationResult validateTokenFromDatabase(String tokenId) {
         try {
-            // Find token in database
-            Optional<JwtToken> tokenOpt = jwtTokenRepository.findByTokenId(tokenId);
+            log.info("Looking up token in database: {}", tokenId);
+
+            // Find token in database - handle both full and shortened token IDs
+            Optional<JwtToken> tokenOpt;
+
+            if (tokenId.length() == 16) {
+                // Shortened token ID - search by prefix
+                log.debug("Using shortened token ID (16 chars), searching by prefix");
+                tokenOpt = jwtTokenRepository.findByTokenIdStartingWith(tokenId);
+            } else {
+                // Full token ID
+                log.debug("Using full token ID, direct lookup");
+                tokenOpt = jwtTokenRepository.findByTokenId(tokenId);
+            }
+
             if (!tokenOpt.isPresent()) {
                 log.error("Token not found in database: {}", tokenId);
                 return JwtValidationResult.error("Invalid EMV QR code token");
@@ -266,7 +279,7 @@ public class JwtTokenService {
 
             // Create payment data
             PaymentData paymentData = new PaymentData();
-            paymentData.setTokenId(tokenId);
+            paymentData.setTokenId(tokenEntity.getTokenId()); // Use FULL token ID from database
             paymentData.setMerchantWallet(tokenEntity.getMerchantWallet());
             paymentData.setMerchantNumber(tokenEntity.getMerchantNumber());
             paymentData.setMerchantName(tokenEntity.getMerchantName());
@@ -275,7 +288,7 @@ public class JwtTokenService {
             paymentData.setCurrency(tokenEntity.getCurrency());
             paymentData.setExpiresAt(tokenEntity.getExpiresAt());
 
-            log.info("EMV QR token validated successfully. Token ID: {}", tokenId);
+            log.info("EMV QR token validated successfully. Full Token ID: {}", tokenEntity.getTokenId());
 
             return JwtValidationResult.success(paymentData);
 
@@ -284,7 +297,6 @@ public class JwtTokenService {
             return JwtValidationResult.error("Database validation error: " + e.getMessage());
         }
     }
-
     /**
      * Mark EMV QR token as used
      */
@@ -449,5 +461,134 @@ public class JwtTokenService {
 
         public LocalDateTime getExpiresAt() { return expiresAt; }
         public void setExpiresAt(LocalDateTime expiresAt) { this.expiresAt = expiresAt; }
+    }
+
+    /**
+     * Generate JWT for customer QR
+     */
+    public JwtGenerationResult generateJwtForCustomerQR(String customerIdentifier, BigDecimal amount, String walletNumber) {
+        try {
+            log.info("Generating JWT for customer: {} with amount: {}", customerIdentifier, amount);
+
+            // Generate unique token ID
+            String tokenId = UUID.randomUUID().toString();
+
+            // Set expiry date
+            LocalDateTime expiresAt = LocalDateTime.now().plusMinutes(jwtExpirationMinutes);
+            Date expiryDate = Date.from(expiresAt.atZone(java.time.ZoneId.systemDefault()).toInstant());
+
+            // Create JWT payload
+            Map<String, Object> claims = new HashMap<>();
+            claims.put("tokenId", tokenId);
+            claims.put("customerIdentifier", customerIdentifier);
+            claims.put("walletNumber", walletNumber);
+            claims.put("amount", amount.toString());
+            claims.put("currency", "GNF");
+            claims.put("type", "CUSTOMER_PAYMENT_REQUEST");
+            claims.put("entityType", "CUSTOMER");
+            claims.put("iat", System.currentTimeMillis() / 1000);
+
+            // Generate JWT token
+            String jwtToken = Jwts.builder()
+                    .setClaims(claims)
+                    .setSubject(customerIdentifier)
+                    .setIssuedAt(new Date())
+                    .setExpiration(expiryDate)
+                    .setIssuer("CUSTOMER_WALLET_SYSTEM")
+                    .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                    .compact();
+
+            // Save token to database
+            JwtToken tokenEntity = new JwtToken();
+            tokenEntity.setTokenId(tokenId);
+            tokenEntity.setJwtToken(jwtToken);
+            tokenEntity.setMerchantWallet(walletNumber); // Store wallet number
+            tokenEntity.setMerchantNumber(walletNumber); // Store wallet number for both
+            tokenEntity.setMerchantName(customerIdentifier); // Store customer identifier as name
+            tokenEntity.setBankCode("00100");
+            tokenEntity.setAmount(amount);
+            tokenEntity.setCurrency("GNF");
+            tokenEntity.setExpiresAt(expiresAt);
+            tokenEntity.setStatus("ACTIVE");
+
+            jwtTokenRepository.save(tokenEntity);
+
+            log.info("JWT generated successfully for customer. Token ID: {}", tokenId);
+
+            return JwtGenerationResult.success(jwtToken, tokenId);
+
+        } catch (Exception e) {
+            log.error("Error generating JWT for customer: " + customerIdentifier, e);
+            return JwtGenerationResult.error("Failed to generate JWT: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Generate JWT with EMV QR code for Customer
+     */
+    public JwtGenerationResult generateJwtForCustomerQRWithEMVCode(String customerIdentifier, BigDecimal amount, String emvQRCode) {
+        try {
+            log.info("Generating JWT with only EMV QR code for customer: {}", customerIdentifier);
+
+            // Generate unique token ID
+            String tokenId = UUID.randomUUID().toString();
+
+            // Set expiry date
+            LocalDateTime expiresAt = LocalDateTime.now().plusMinutes(jwtExpirationMinutes);
+            Date expiryDate = Date.from(expiresAt.atZone(java.time.ZoneId.systemDefault()).toInstant());
+
+            // Create JWT payload with ONLY EMV QR code
+            Map<String, Object> claims = new HashMap<>();
+            claims.put("emvQRCode", emvQRCode);
+            claims.put("entityType", "CUSTOMER");
+
+            // Generate JWT token
+            String jwtToken = Jwts.builder()
+                    .setClaims(claims)
+                    .setSubject(tokenId)
+                    .setIssuedAt(new Date())
+                    .setExpiration(expiryDate)
+                    .setIssuer("CUSTOMER_WALLET_SYSTEM")
+                    .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                    .compact();
+
+            log.info("JWT with only EMV QR code generated successfully for customer. Token ID: {}", tokenId);
+
+            return JwtGenerationResult.success(jwtToken, tokenId);
+
+        } catch (Exception e) {
+            log.error("Error generating JWT with EMV QR code for customer: " + customerIdentifier, e);
+            return JwtGenerationResult.error("Failed to generate JWT with EMV QR code: " + e.getMessage());
+        }
+    }
+
+    /**
+     * JWT Generation Result class
+     */
+    public static class JwtGenerationResult {
+        private final boolean success;
+        private final String jwtToken;
+        private final String tokenId;
+        private final String errorMessage;
+
+        private JwtGenerationResult(boolean success, String jwtToken, String tokenId, String errorMessage) {
+            this.success = success;
+            this.jwtToken = jwtToken;
+            this.tokenId = tokenId;
+            this.errorMessage = errorMessage;
+        }
+
+        public static JwtGenerationResult success(String jwtToken, String tokenId) {
+            return new JwtGenerationResult(true, jwtToken, tokenId, null);
+        }
+
+        public static JwtGenerationResult error(String errorMessage) {
+            return new JwtGenerationResult(false, null, null, errorMessage);
+        }
+
+        public boolean isSuccess() { return success; }
+        public String getJwtToken() { return jwtToken; }
+        public String getTokenId() { return tokenId; }
+        public String getErrorMessage() { return errorMessage; }
     }
 }

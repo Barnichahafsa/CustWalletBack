@@ -162,14 +162,14 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 log.debug("Wallet found: {}", wallet.getWalletNumber());
 
                 // Check if wallet is blocked
-                if (wallet.getBlockAction() != null && wallet.getBlockAction() == 'Y') {
+               /* if (wallet.getBlockAction() != null && wallet.getBlockAction() == 'Y') {
                     log.warn("Wallet is blocked: {}", wallet.getWalletNumber());
                     response.setStatus(HttpServletResponse.SC_FORBIDDEN);
                     response.setContentType("application/json");
                     response.getWriter().write("{\"error\":\"Account is blocked\"}");
                     return;
                 }
-
+*/
                 // Create UserDetails from wallet
                 UserDetails userDetails = createUserDetailsFromWallet(wallet);
 
@@ -219,7 +219,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         return servletPath.startsWith("/api/auth/") ||
                 servletPath.equals("/api/wallet/list-secretQ") ||
                 servletPath.equals("/api/otp/verify") ||
-                servletPath.equals("/api/customer/register");
+                servletPath.equals("/api/nationalities") ||
+                servletPath.equals("/api/wallet/initiateBill") ||
+                servletPath.equals("/api/customer/register") ||
+                servletPath.equals("/api/dsd/payments/status");
     }
     /**
      * Create a UserDetails object from a Wallet entity
